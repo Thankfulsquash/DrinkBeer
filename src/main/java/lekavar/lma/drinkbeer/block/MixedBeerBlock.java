@@ -91,19 +91,6 @@ public class MixedBeerBlock extends BlockWithEntity {
         return ActionResult.FAIL;
     }
 
-    @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        try {
-            MixedBeerEntity mixedBeerEntity = (MixedBeerEntity) world.getBlockEntity(pos);
-            ItemStack mixedBeerItemStack = mixedBeerEntity.getPickStack(state);
-
-            dropStack(world, pos, mixedBeerItemStack);
-        } catch (Exception e) {
-            System.out.println("Somthing wrong with dropping mixed beer item stack!");
-        }
-        super.onStateReplaced(state, world, pos, newState, moved);
-    }
-
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
