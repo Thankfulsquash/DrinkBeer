@@ -68,14 +68,7 @@ public class MixedBeerEntity extends BlockEntity {
             this.spiceList.add(spiceId);
         }
     }
-
-    @Environment(EnvType.CLIENT)
-    public ItemStack getPickStack(BlockState state) {
-        //Generate mixed beer item stack for dropping
-        ItemStack resultStack = MixedBeerManager.genMixedBeerItemStack(this.beerId, this.spiceList);
-        return resultStack;
-    }
-
+    
     public int getBeerId() {
         return beerId;
     }
